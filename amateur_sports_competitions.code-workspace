@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "apify"
+		},
+		{
+			"path": "apps-script"
+		}
+	],
+	"settings": {}
+}
