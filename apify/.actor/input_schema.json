@@ -3,17 +3,6 @@
     "type": "object",
     "schemaVersion": 1,
     "properties": {
-        "startUrls": {
-            "title": "Start URLs",
-            "type": "array",
-            "description": "URLs to start with.",
-            "editor": "requestListSources",
-            "prefill": [
-                {
-                    "url": "https://crawlee.dev"
-                }
-            ]
-        },
         "maxRequestsPerCrawl": {
             "title": "Max Requests per Crawl",
             "type": "integer",
@@ -23,13 +12,13 @@
         "maxConcurrency": {
             "title": "Max Concurrency per Crawl",
             "type": "integer",
-            "description": "Maximum number of requests that can be made by this crawler.",
+            "description": "Sets the maximum concurrency (parallelism) for the crawl.",
             "default": 20
         },
-         "password": {
+         "private_key": {
             "title": "Password",
             "type": "string",
-            "description": "A secret, encrypted input field",
+            "description": "A Google Service Account private key.",
             "editor": "textfield",
             "isSecret": true
         }

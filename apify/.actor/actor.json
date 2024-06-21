@@ -1,12 +1,9 @@
 {
     "actorSpecification": 1,
-    "name": "my-actor-2",
-    "title": "Project Playwright Crawler Typescript",
-    "description": "Crawlee and Playwright project in typescript.",
+    "name": "scrape-events-russiarunning-com",
+    "title": "Scrape Events russiarunning.com",
+    "description": "Scrape data and save it to a Google Sheet",
     "version": "0.0",
-    "meta": {
-        "templateId": "ts-crawlee-playwright-chrome"
-    },
     "input": "./input_schema.json",
     "dockerfile": "./Dockerfile"
 }
