@@ -21,6 +21,13 @@
             "description": "A Google Service Account private key.",
             "editor": "textfield",
             "isSecret": true
-        }
+        },
+        "client_email": {
+           "title": "Password",
+           "type": "string",
+           "description": "A Google Service Account private key.",
+           "editor": "textfield",
+           "isSecret": true
+       }
     }
 }
