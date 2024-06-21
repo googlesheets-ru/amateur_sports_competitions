@@ -25,6 +25,13 @@
             "type": "integer",
             "description": "Maximum number of requests that can be made by this crawler.",
             "default": 20
+        },
+         "password": {
+            "title": "Password",
+            "type": "string",
+            "description": "A secret, encrypted input field",
+            "editor": "textfield",
+            "isSecret": true
         }
     }
 }
