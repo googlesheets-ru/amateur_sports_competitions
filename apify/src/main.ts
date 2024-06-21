@@ -12,7 +12,7 @@ import { PuppeteerCrawler } from 'crawlee';
 // read more about this here: https://nodejs.org/docs/latest-v18.x/api/esm.html#mandatory-file-extensions
 // note that we need to use `.js` even when inside TS files
 import { router } from './routes.js';
-import upload_1 from './upload_1.js';
+import upload from './upload.js';
 
 interface Input {
     startUrls: string[];
@@ -48,6 +48,6 @@ const dataArr = data.map((item) => ['url', 'date', 'name', 'city'].map((key) => 
 
 console.log(data);
 
-await upload_1(dataArr, '1v8qf7eQeloaEh3eJ3rmoWa0xrdzcv9FirVBgp3lqUgQ', 'russiarunning.com');
+await upload(dataArr, '1v8qf7eQeloaEh3eJ3rmoWa0xrdzcv9FirVBgp3lqUgQ', 'russiarunning.com');
 // Exit successfully
 await Actor.exit();

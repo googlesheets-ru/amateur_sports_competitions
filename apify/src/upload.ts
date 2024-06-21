@@ -24,6 +24,7 @@ export default async (data: Dictionary[], bookId: string, sheetName: string) => 
     const client = await auth.getClient();
 
     // Obtain a new drive client, making sure you pass along the auth client
+    // @ts-expect-error-ignore-next-line
     const sheets = google.sheets({ auth: client, version: 'v4' });
 
     await sheets.spreadsheets.values.clear({
@@ -31,6 +32,7 @@ export default async (data: Dictionary[], bookId: string, sheetName: string) => 
         spreadsheetId: bookId,
     });
 
+    // @ts-expect-error-ignore-next-line
     await sheets.spreadsheets.values.update({
         spreadsheetId: bookId,
         range: `${sheetName}!A2`,
