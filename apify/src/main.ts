@@ -19,7 +19,12 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     const configPath = './Actor.config.json';
     if (fs.existsSync(configPath)) {
-        input = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+        input = JSON.parse(
+            fs
+                .readFileSync(configPath, 'utf-8')
+                .split(String.raw`\n`)
+                .join('\n')
+        );
     } else {
         console.error('Local Actor.config file not found.');
         process.exit(1);
