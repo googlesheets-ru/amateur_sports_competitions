@@ -1,5 +1,5 @@
 {
-    "title": "PlaywrightCrawler Template",
+    "title": "oshliaer/scrape-events-russiarunning-com",
     "type": "object",
     "schemaVersion": 1,
     "properties": {
@@ -18,7 +18,13 @@
             "title": "Max Requests per Crawl",
             "type": "integer",
             "description": "Maximum number of requests that can be made by this crawler.",
-            "default": 100
+            "default": 1000
+        },
+        "maxConcurrency": {
+            "title": "Max Concurrency per Crawl",
+            "type": "integer",
+            "description": "Maximum number of requests that can be made by this crawler.",
+            "default": 20
         }
     }
 }

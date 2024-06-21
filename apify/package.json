@@ -9,7 +9,9 @@
     "dependencies": {
         "apify": "^3.1.10",
         "crawlee": "^3.5.4",
-        "playwright": "*"
+        "puppeteer-core": "*",
+        "google-auth-library": "^9.9.0",
+        "google-spreadsheet": "^4.1.1"
     },
     "devDependencies": {
         "@apify/eslint-config-ts": "^0.3.0",

@@ -23,9 +23,15 @@ await Actor.init();
 
 // Structure of input is defined in input_schema.json
 const {
-    startUrls = ['https://russiarunning.com/events?place&p=1'],
+    startUrls = [
+        'https://russiarunning.com/events?place',
+        ...Array.from(
+            { length: 0 },
+            (_, i) => `https://russiarunning.com/events?place&p=${i + 1}`
+        ),
+    ],
     maxRequestsPerCrawl = 100,
-} = await Actor.getInput<Input>() ?? {} as Input;
+} = (await Actor.getInput<Input>()) ?? ({} as Input);
 
 const proxyConfiguration = await Actor.createProxyConfiguration();
 
