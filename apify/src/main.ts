@@ -28,6 +28,8 @@ const privateKey: string = Actor.config.get('private_key');
 // @ts-expect-error-ignore-next-line
 const clientEmail: string = Actor.config.get('client_email');
 
+console.log(privateKey);
+
 // Structure of input is defined in input_schema.json
 const {
     startUrls = [

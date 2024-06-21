@@ -16,14 +16,14 @@
             "default": 20
         },
          "private_key": {
-            "title": "Password",
+            "title": "private_key",
             "type": "string",
             "description": "A Google Service Account private key.",
             "editor": "textfield",
             "isSecret": true
         },
         "client_email": {
-           "title": "Password",
+           "title": "client_email",
            "type": "string",
            "description": "A Google Service Account private key.",
            "editor": "textfield",
