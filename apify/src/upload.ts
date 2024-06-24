@@ -17,18 +17,44 @@ export default async (data: Dictionary[], bookId: string, sheetName: string, cre
     // @ts-expect-error-ignore-next-line
     const sheets = google.sheets({ auth: client, version: 'v4' });
 
-    await sheets.spreadsheets.values.clear({
-        range: `${sheetName}!A2:D`,
+    const book = await sheets.spreadsheets.get({
         spreadsheetId: bookId,
+        ranges: [sheetName],
+        fields: 'sheets(properties)',
     });
 
-    // @ts-expect-error-ignore-next-line
-    await sheets.spreadsheets.values.update({
-        spreadsheetId: bookId,
-        range: `${sheetName}!A2`,
-        valueInputOption: 'USER_ENTERED',
-        resource: {
-            values: data,
-        },
-    });
+    const sheet = book.data?.sheets?.[0];
+
+    if (sheet) {
+        if (sheet && sheet.properties?.gridProperties?.rowCount && sheet.properties?.gridProperties?.rowCount > 2) {
+            // @ts-expect-error-ignore-next-line
+            await sheets.spreadsheets.batchUpdate({
+                spreadsheetId: bookId,
+                resource: {
+                    requests: [
+                        {
+                            deleteDimension: {
+                                range: {
+                                    dimension: 'ROWS',
+                                    sheetId: sheet.properties.sheetId,
+                                    startIndex: 2,
+                                    endIndex: 9999999,
+                                },
+                            },
+                        },
+                    ],
+                },
+            });
+        }
+
+        // @ts-expect-error-ignore-next-line
+        await sheets.spreadsheets.values.update({
+            spreadsheetId: bookId,
+            range: `${sheetName}!A2`,
+            valueInputOption: 'USER_ENTERED',
+            resource: {
+                values: data,
+            },
+        });
+    }
 };

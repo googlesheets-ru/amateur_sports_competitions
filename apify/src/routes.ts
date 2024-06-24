@@ -6,7 +6,7 @@ const pageHandler: RequestHandler<PuppeteerCrawlingContext> = async ({ page, log
     log.info(`enqueueing new URLs`);
     console.log(request.url);
 
-    await page.waitForSelector('.pagination__button');
+    // await page.waitForSelector('.pagination__button', { timeout: 90 });
     const events = await page.$$eval('.event-card__container', (eventCards) => {
         return eventCards.map((card) => {
             const date = card.querySelector('.event-card__header')?.textContent?.trim();
@@ -23,8 +23,6 @@ const pageHandler: RequestHandler<PuppeteerCrawlingContext> = async ({ page, log
             };
         });
     });
-
-    console.log(events);
 
     await Dataset.pushData(events);
 };

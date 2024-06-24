@@ -15,7 +15,7 @@
             "description": "Sets the maximum concurrency (parallelism) for the crawl.",
             "default": 20
         },
-         "private_key": {
+        "private_key": {
             "title": "private_key",
             "type": "string",
             "description": "A Google Service Account private key.",
@@ -23,11 +23,29 @@
             "isSecret": true
         },
         "client_email": {
-           "title": "client_email",
-           "type": "string",
-           "description": "A Google Service Account private key.",
-           "editor": "textfield",
-           "isSecret": true
-       }
+            "title": "client_email",
+            "type": "string",
+            "description": "A Google Service Account private key.",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "pages": {
+            "title": "Pages",
+            "type": "integer",
+            "description": "Min 0, Max 25",
+            "default": 1
+        },
+        "bookId": {
+            "title": "Book ID",
+            "type": "string",
+            "description": "Target book ID",
+            "editor": "textfield"
+        },
+        "sheetName": {
+            "title": "sheetName",
+            "type": "string",
+            "description": "Target sheet name",
+            "editor": "textfield"
+        }
     }
 }
