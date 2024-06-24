@@ -1,4 +1,5 @@
 function userActionScrapeMyraceInfo() {
+  console.log('userActionScrapeMyraceInfo', 'start');
   // Получаем новые ссылки
   const url = 'https://myrace.info/take/';
   const contentList = UrlFetchApp.fetch(url).getContentText();
@@ -29,4 +30,5 @@ function userActionScrapeMyraceInfo() {
   } else {
     sheet.getRange('2:2').clearContent();
   }
+  console.log('userActionScrapeMyraceInfo', 'finish');
 }
