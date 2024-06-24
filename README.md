@@ -1,9 +1,5 @@
-# An empty Google Apps Script project
+# Любительские спортивные соревнования
 
 * <https://myrace.info/take/>
-* <https://timerman.org/events?sportType=all&season=all> - это нельзя скриптами
+* <https://timerman.org/events?sportType=all&season=all>
 * <https://iron-star.com/event/>
-
-* <https://russiarunning.com/events?place&p=1>
-
-* <https://russiarunning.com/events?place&p=25>
