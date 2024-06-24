@@ -21,7 +21,7 @@ function userActionScrapeMyraceInfo() {
   }
 
   // Прарсим данные первых 10 ссылок
-  const maxCalls = 10;
+  const maxCalls = 100;
   let countCalls = 0;
   data.some((row, rowIndex) => {
     if (rowIndex === 0) {

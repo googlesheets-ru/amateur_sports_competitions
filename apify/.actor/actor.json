@@ -1,9 +1,0 @@
-{
-    "actorSpecification": 1,
-    "name": "scrape-events-russiarunning-com",
-    "title": "Scrape Events russiarunning.com",
-    "description": "Scrape data and save it to a Google Sheet",
-    "version": "0.0",
-    "input": "./input_schema.json",
-    "dockerfile": "./Dockerfile"
-}

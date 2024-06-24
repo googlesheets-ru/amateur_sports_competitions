@@ -1,2 +1,4 @@
+/.clasp.json
 node_modules
-apify/Actor.config.json
+build
+dist

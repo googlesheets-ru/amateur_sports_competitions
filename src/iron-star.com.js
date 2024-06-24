@@ -11,7 +11,7 @@ function userActionScrapeIronStarCom() {
     const $item = Cheerio.load(item);
     const date = $item('.date').text();
     const name = $item('.title').text();
-    const city = $item('.place').text();
+    const city = $('.place').text();
     newUrls.push([$(item).attr('href'), date, name, city]);
   });
 
@@ -20,9 +20,7 @@ function userActionScrapeIronStarCom() {
   // Сохраняем новые ссылки
   const book = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = book.getSheetByName('iron-star.com');
-  if (sheet.getLastRow() > 1) {
-    sheet.deleteRows(2, sheet.getLastRow() - 1);
-  }
+  sheet.deleteRows(2, sheet.getLastRow() - 1);
 
   if (newUrls.length > 0) {
     sheet.getRange(sheet.getLastRow() + 1, 1, newUrls.length, newUrls[0].length).setValues(newUrls);
