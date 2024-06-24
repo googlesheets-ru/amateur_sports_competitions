@@ -91,13 +91,3 @@ class App {
     this.updateNewLinks(scrapeName1, newLinks1);
   }
 }
-
-function run() {
-  const app = new App();
-  app.scrapeNewLinks();
-  app.scrapeNextLink();
-  app.scrapeNextLink();
-  app.scrapeNextLink();
-  app.scrapeNextLink();
-  app.scrapeNextLink();
-}
