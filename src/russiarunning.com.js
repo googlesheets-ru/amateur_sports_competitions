@@ -1,5 +1,6 @@
 /* exported userActionScrapeRussiarunningCom */
 function userActionScrapeRussiarunningCom() {
+  console.log('userActionScrapeRussiarunningCom', 'start');
   const url = 'https://russiarunning.com/api/events/list/ru';
   const payload = {
     Take: 500,
@@ -33,4 +34,5 @@ function userActionScrapeRussiarunningCom() {
   } else {
     sheet.getRange('2:2').clearContent();
   }
+  console.log('userActionScrapeRussiarunningCom', 'finish');
 }

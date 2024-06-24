@@ -1,4 +1,5 @@
 function userActionScrapeIronStarCom() {
+  console.log('userActionScrapeIronStarCom', 'start');
   // Получаем новые ссылки
   const url = 'https://iron-star.com/event/';
   const contentList = UrlFetchApp.fetch(url).getContentText();
@@ -16,8 +17,6 @@ function userActionScrapeIronStarCom() {
     values.push([url, date, name, city]);
   });
 
-  console.log(values);
-
   const book = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = book.getSheetByName('iron-star.com');
 
@@ -28,4 +27,5 @@ function userActionScrapeIronStarCom() {
   } else {
     sheet.getRange('2:2').clearContent();
   }
+  console.log('userActionScrapeIronStarCom', 'finish');
 }
